@@ -11,13 +11,19 @@ typedef struct tagBITMAPFILEHEADER {
     DWORD bfOffBits;   // 4 /* Offset to image data, bytes */
 } __attribute__((packed)) BITMAPFILEHEADER;
 
+#ifndef BI_RGB
+#define BI_RGB 0
+#endif
+
+#pragma pack(1)
+
 typedef struct tagBITMAPINFOHEADER {
     DWORD biSize;          // 4 /* Header size in bytes */
     LONG biWidth;          // 4 /* Width of image */
     LONG biHeight;         // 4 /* Height of image */
     WORD biPlanes;         // 2 /* Number of colour planes */
     WORD biBitCount;       // 2 /* Bits per pixel */
-    DWORD biCompress;      // 4 /* Compression type */
+    DWORD biCompression;   // 4 /* Compression type */
     DWORD biSizeImage;     // 4 /* Image size in bytes */
     LONG biXPelsPerMeter;  // 4
     LONG biYPelsPerMeter;  // 4 /* Pixels per meter */
@@ -38,3 +44,5 @@ typedef struct
     BYTE g;
     BYTE r;
 } RGB_data;  // RGB TYPE, plz also make sure the order
+
+#pragma pack()
