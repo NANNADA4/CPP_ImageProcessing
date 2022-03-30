@@ -6,38 +6,40 @@
 #define COL 512             // HOR = 512
 #define F_SIZE (ROW * COL)  // F_SIZE = 512*512
 
-unsigned char ResultImage[512][512] = {0};
+unsigned char Image[512][512];
 
 int main() {
     int i, j;
-    FILE *fout;
+    FILE *fp;
+
+    fp = fopen("lena_raw_512x512.raw", "rb");
 
     // 밝기증가
     for (i = 0; i < COL; i++) {
         for (j = 0; j < 100; j++) {
-            ResultImage[i][j] = 120;
+            Image[i][j] = 120;
         }
 
         for (j = 100; j < 200; j++) {
-            ResultImage[i][j] = (char)(j * (0.15) + 105);
+            Image[i][j] = (char)(j * (0.15) + 105);
         }
 
         for (j = 200; j < 280; j++) {
-            ResultImage[i][j] = (char)(j * (90 / 80) - 90);
+            Image[i][j] = (char)(j * (90 / 80) - 90);
         }
 
         for (j = 280; j < 300; j++) {
-            ResultImage[i][j] = (char)(j * 0.75 + 15);
+            Image[i][j] = (char)(j * 0.75 + 15);
         }
 
         for (j = 300; j < ROW; j++) {
-            ResultImage[i][j] = 240;
+            Image[i][j] = 240;
         }
     }
 
-    fout = fopen("HW01.raw", "wb");
-    fwrite(ResultImage, sizeof(char), F_SIZE, fout);
-    fclose(fout);
+    fp = fopen("HW01.raw", "wb");
+    fwrite(Image, sizeof(char), F_SIZE, fp);
+    fclose(fp);
 
     return 0;
 }
