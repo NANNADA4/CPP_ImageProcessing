@@ -26,7 +26,7 @@ card.addEventListener("mouseleave", function (e) {
 });
 
 card.addEventListener("mouseenter", (e) => {
-    EntryImage.style.transform = "rotateZ(-45deg) translateZ(150px)";
+    EntryImage.style.transform = "rotateZ(-365deg) translateZ(150px)";
 });
 
 card.addEventListener("mouseleave", (e) => {
