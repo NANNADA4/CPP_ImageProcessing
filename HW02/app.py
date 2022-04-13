@@ -1,5 +1,4 @@
-# app.py
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_file
 from werkzeug.utils import secure_filename
 import numpy as np
 import matplotlib.pyplot as plt
@@ -32,7 +31,9 @@ def server():
 
 
 def histogram():
-    return 'hello, histogram'
+    img = Image.open('./static/SavedImages/lena_original.bmp')
+
+    return render_template('showImg.html')
 
 
 def equlization():

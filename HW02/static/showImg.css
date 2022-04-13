@@ -1,0 +1,13 @@
+.row {
+    padding: 30px 15% 10px 15%;
+}
+
+.histogram {
+    padding: 0px 15% 10px 15%;
+}
+
+img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
