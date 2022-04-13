@@ -24,32 +24,6 @@ body {
     border-radius: 5%;
 }
 
-.d-block {
-    width: 80%;
-    margin-top: -15%;
-    margin-bottom: -20%;
-    width: initial;
-}
-
-.row {
-    padding: 30px 15% 10px 15%;
-    vertical-align: top;
-    height: max-content;
-}
-
-.main-content {
-    height: 16px;
-}
-
-.iframe-side {
-    position: absolute;
-    margin-left: 4%;
-}
-
-.updown {
-    border: 1px solid #c3c4c6;
-    height: 150px;
-    position: absolute;
-    margin-left: 2%;
-    margin-right: 2%;
+.card {
+    margin: 30px 15% 10px 15%;
 }

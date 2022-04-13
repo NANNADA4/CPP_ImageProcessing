@@ -18,15 +18,33 @@ def info():
     return render_template('main.html')
 
 
-@app.route("/server", methods=["GET", "POST"])
+@app.route("/server", methods=["POST"])
 def server():
-    if request.method == "POST":
-        file_name = request.files["file"]
-        file_name.save("./static/images/" +
-                       secure_filename(file_name.filename))
-        file_path = "./static/images/" + str(file_name.filename)
+    option = request.form['ImageProcess']
+    if (option == 'Histogram'):
+        return histogram()
+    elif (option == 'Equlization'):
+        return equlization()
+    elif (option == 'BasicContrast'):
+        return basic()
+    else:
+        return endsin()
 
-        img = Image.open(file_path)
+
+def histogram():
+    return 'hello, histogram'
+
+
+def equlization():
+    return 'hello, equlization'
+
+
+def basic():
+    return 'hello, basic'
+
+
+def endsin():
+    return 'hello, endsin'
 
 
 if __name__ == "__main__":

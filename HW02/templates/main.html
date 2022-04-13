@@ -45,10 +45,9 @@
                         <p>
                             1. 원하는 기능을 선택하세요.
                             <br><br>
-                            2. 출력 혹은 변환을 원하는 이미지를 업로드하세요. <br>👉개발자의 실력에 따라 정해진 이미지만 가능할 수 있어요.
+                            2. 결과가 나올 때까지 무릎꿇고 기도하며 잠시 기다려주세요.
                             <br><br>
-                            3. 결과가 나올 때까지 무릎꿇고 기도하며 잠시 기다려주세요.
-                            <br><br>
+                            하루만에 만들어서 조잡할 수 있어요... <br>
                             되야할텐데... 작동 되야하는데... 제발...
                     </div>
                 </div>
@@ -67,28 +66,28 @@
             <h5 class="card-title">마법같은 일이 벌어질거예요. 제발🙏🙏🙏</h5>
             <p class="card-text">아래에서 버튼을 눌러 원하는 기능을 선택할 수 있어요<br>물론 작동하지 않을 수도 있죠</p>
             <hr>
-            <h5 class="card-title">이 곳에서 원하는 기능을 선택해보세요.</h5>
+            <h5 class="card-title">이 곳에서 원하는 기능을 선택해보세요.</h5> <br>
             <form id="upload-form" method="post" action="http://127.0.0.1:5000/server" enctype="multipart/form-data">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="btnHistogram" checked>
+                    <input class="form-check-input" type="radio" name="ImageProcess" value="Histogram" checked>
                     <label class="form-check-label" for="flexRadioDefault1">
                         Histogram
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="btnEqulization">
+                    <input class="form-check-input" type="radio" name="ImageProcess" value="Equlization">
                     <label class="form-check-label" for="flexRadioDefault2">
                         Histogram Equalization
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="btnBasicContrast">
+                    <input class="form-check-input" type="radio" name="ImageProcess" value="BasicContrast">
                     <label class="form-check-label" for="flexRadioDefault2">
                         Basic Contrast Stretching
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="btnEndsinContrast">
+                    <input class="form-check-input" type="radio" name="ImageProcess" value="EndsinContrast">
                     <label class="form-check-label" for="flexRadioDefault2">
                         Ends-in Contrast Stretching
                     </label>
@@ -107,23 +106,19 @@
                         시험 100점 받기 🎉🎉🎉
                     </label>
                 </div>
-                <div class="input-group mb-3">
-                    <input name="file" id="pictureMessage" type="file" accept="image/png"
-                        onchange="CheckFileSize(this, 5)" class="form-control" id="inputGroupFile02">
-                    <input onclick="sendMessage()" value="Send" type="submit"></input>
-                </div>
+                <hr>
+                <button type="submit" class="btn btn-primary" value="Send" type="submit">출력하기</button>
             </form>
-            <p id=messageTextArea>Lena 이미지만 올려주세요. 다른 거 올리면 안돼요...😭</p>
         </div>
     </div>
 
     <footer class="footer mt-auto py-3 bg-light">
         <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
             <div class="me-5 d-none d-lg-block">
-                <span>연세대학교 영상처리</span>
+                <span>연세대학교 영상처리 과제02</span>
             </div>
             <div>
-                <a href="https://github.com/NANNADA4 class=" me-4 text-reset">
+                <a href="https://github.com/NANNADA4" class=" me-4 text-reset">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-github" viewBox="0 0 16 16">
                         <path
