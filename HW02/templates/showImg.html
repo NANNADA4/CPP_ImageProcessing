@@ -46,7 +46,7 @@
             </div>
             <div class="card-body">
                 <div class="image-container">
-                    <img src="{{url_for('static', filename = '/SavedImages/lena_original.bmp')}}">
+                    <img src="data:image/png;base64, {{ plot_url }}">
                 </div>
                 <hr>
                 <a href="{{ url_for('info')}}" class="btn btn-primary">메인 페이지로 돌아가기</a>
