@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Gugi&family=Nanum+Gothic&family=Jua&family=Poppins:wght@400;500&display=swap");
+
+html {
+    overflow: hidden;
+}
+
+h1 {
+    font-family: "Gugi", cursive;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Nanum Gothic", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+.crossfade > figure {
+    animation: imageAnimation 30s linear infinite 0s;
+    backface-visibility: hidden;
+    background-size: cover;
+    background-position: center center;
+    color: transparent;
+    height: 100%;
+    left: 0px;
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    z-index: 0;
+    filter: blur(5px);
+}
+
+.crossfade > figure:nth-child(1) {
+    background-image: url("../static/img/img_parallax.jpg");
+}
+
+.crossfade > figure:nth-child(2) {
+    animation-delay: 6s;
+    background-image: url("../static/img/img_parallax2.jpg");
+}
+
+.crossfade > figure:nth-child(3) {
+    animation-delay: 12s;
+    background-image: url("../static/img/img_parallax3.jpg");
+}
+
+.crossfade > figure:nth-child(4) {
+    animation-delay: 18s;
+    background-image: url("../static/img/img_parallax4.jpg");
+}
+
+.crossfade > figure:nth-child(5) {
+    animation-delay: 24s;
+    background-image: url("../static/img/img_parallax5.jpg");
+}
+
+@keyframes imageAnimation {
+    0% {
+        animation-timing-function: ease-in;
+        opacity: 0;
+    }
+
+    8% {
+        animation-timing-function: ease-out;
+        opacity: 1;
+    }
+
+    17% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.card {
+    transform-style: preserve-3d;
+    min-height: 65vh;
+    width: 45rem;
+    border-radius: 30px;
+    background-color: white;
+    padding: 0rem 5rem;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2);
+    transition: 0.5s ease;
+}
+
+.EntryImage {
+    min-height: 35vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.EntryImage img {
+    width: 10rem;
+    z-index: 3;
+    transition: all 0.75s ease-out;
+}
+
+.circle {
+    width: 15rem;
+    height: 15rem;
+    background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
+    position: absolute;
+    box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.info h1 {
+    font-size: 3rem;
+    transition: all 0.75s ease-out;
+}
+
+.info h3 {
+    font-size: 1.3rem;
+    padding: 2rem 0rem;
+    color: #585858;
+    font-weight: lighter;
+    transition: all 0.75s ease-out;
+}
+
+.LinkTo {
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.75s ease-out;
+}
+
+.LinkTo button {
+    padding: 1.3rem 2rem;
+    background: white;
+    border: none;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #282a36;
+}
+
+.btn:hover {
+    background: #bd93f9;
+    color: #282a36;
+}
+
+.btn {
+    transition: all 0.5s ease;
+}
