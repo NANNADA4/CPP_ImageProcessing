@@ -5,13 +5,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 from PIL import Image
 
-# Flask 객체 인스턴스 생성
 app = Flask(__name__)
 
-
-@app.route('/')  # 접속하는 url
+@app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('entry.html')
 
 
 @app.route('/main')

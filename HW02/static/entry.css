@@ -40,7 +40,7 @@ body {
 }
 
 .crossfade > figure:nth-child(1) {
-    background-image: url("../static/img/img_parallax.jpg");
+    background-image: url("../static/img/img_parallax1.jpg");
 }
 
 .crossfade > figure:nth-child(2) {

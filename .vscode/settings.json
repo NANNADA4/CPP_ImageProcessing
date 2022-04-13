@@ -2,5 +2,6 @@
     "files.associations": {
         "*.rmd": "markdown",
         "filesystem": "cpp"
-    }
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
 }
