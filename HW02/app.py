@@ -7,6 +7,7 @@ from PIL import Image
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def index():
     return render_template('entry.html')
@@ -25,21 +26,7 @@ def server():
                        secure_filename(file_name.filename))
         file_path = "./static/images/" + str(file_name.filename)
 
-        img = Image.open(file_path).convert("L")
-
-        # 이미지 리사이징
-        img = np.resize(img, (1, 784))
-
-        test_data = ((np.array(img) / 255) - 1) * -1
-
-        # 모델 불러오기
-        model = load_model("./Predict_Model.h5")
-
-        # 클래스 예측 함수에 가공된 테스트 데이터 넣어 결과 도출
-        predict_x = model.predict(test_data)
-        res = np.argmax(predict_x, axis=1)
-
-        return str(res)
+        img = Image.open(file_path)
 
 
 if __name__ == "__main__":
