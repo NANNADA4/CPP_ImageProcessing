@@ -162,40 +162,36 @@ def endsin():
     width = image.width
     height = image.height
     pixels = []
+    newArray = []
+    min = 50
+    max = 190
 
     for x in range(256):
         pixels.append(x)
+        newArray.append(x)
 
     histoArray = np.zeros(256, dtype=int)
 
-    for h in range(0, height):
-        for w in range(0, width):
+    for h in range(height):
+        for w in range(width):
             Pixel = image.getpixel((w, h))
-            histoArray[Pixel] += 1
 
-    low = 50
-    high = 190
-    a = high - low
-    newArray = []
+            if (Pixel < min):
+                newPixel = 0
+            elif(Pixel >= max):
+                newPixel = 255
+            else:
+                newPixel = int(((Pixel - min) / (max - min)) * 255)
 
-    for x in range(256):
-        newArray.append(x)
+            histoArray[newPixel] += 1
 
-    for i in range(0, len(histoArray)):
-        if (histoArray[i] < low):
-            newArray[i] = 0
-        elif (histoArray[i] > high):
-            newArray[i] = 255
-        else:
-            newArray[i] = (histoArray[i] - low) / a * 255
-
-    plt.bar(pixels, newArray)
+    plt.bar(pixels, histoArray)
     img = BytesIO()
     plt.savefig(img, format='png', dpi=200)
     img.seek(0)
-    plot_url3 = base64.b64encode(img.getvalue()).decode('utf8')
+    plot_url2 = base64.b64encode(img.getvalue()).decode('utf8')
 
-    return render_template('showImg3.html', plot_url3=plot_url3)
+    return render_template('showImg2.html', plot_url2=plot_url2)
 
 
 if __name__ == "__main__":
