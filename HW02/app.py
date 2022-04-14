@@ -56,15 +56,19 @@ def histogram():
 
     width = image.width
     height = image.height
+    pixels = []
 
-    histoArray = np.zeros(255, dtype=int)
+    for x in range(256):
+        pixels.append(x)
+
+    histoArray = np.zeros(256, dtype=int)
 
     for h in range(0, height):
         for w in range(0, width):
             Pixel = image.getpixel((w, h))
             histoArray[Pixel] += 1
 
-    plt.plot(histoArray)
+    plt.bar(pixels, histoArray)
     img = BytesIO()
     plt.savefig(img, format='png', dpi=200)
     img.seek(0)
@@ -78,18 +82,29 @@ def equalization():
 
     width = image.width
     height = image.height
+    sum = 0
+    scale_factor = 255 / height * width
+    pixels = []
+    comulativeArray = []
+    sum_hist = []
 
-    histoArray = np.zeros(255, dtype=int)
-    comulativeArray = np.zeros(255, dtype=int)
+    for x in range(256):
+        pixels.append(x)
+        comulativeArray.append(x)
+        sum_hist.append(x)
+
+    histoArray = np.zeros(256, dtype=int)
 
     for h in range(0, height):
         for w in range(0, width):
             Pixel = image.getpixel((w, h))
             histoArray[Pixel] += 1
 
-    comulativeArray = np.multiply(histoArray, 255 / (512 * 512)).astype('int')
+    for y in range(256):
+        sum += histoArray[y]
+        sum_hist[y] = int(sum * scale_factor + 0.5)
 
-    plt.plot(comulativeArray)
+    plt.bar(pixels, sum_hist)
     img = BytesIO()
     plt.savefig(img, format='png', dpi=200)
     img.seek(0)
@@ -99,11 +114,88 @@ def equalization():
 
 
 def basic():
-    return 'hello, basic'
+    image = Image.open('./static/SavedImages/lena_original.bmp')
+
+    width = image.width
+    height = image.height
+    pixels = []
+    newArray = []
+    min = 255
+    max = 0
+
+    for h in range(height):
+        for w in range(width):
+            Pixel = image.getpixel((w, h))
+            if (Pixel < min):
+                min = Pixel
+
+    for h in range(height):
+        for w in range(width):
+            Pixel = image.getpixel((w, h))
+            if (Pixel > max):
+                max = Pixel
+
+    for x in range(256):
+        pixels.append(x)
+        newArray.append(x)
+
+    histoArray = np.zeros(256, dtype=int)
+
+    for h in range(height):
+        for w in range(width):
+            Pixel = image.getpixel((w, h))
+            newPixel = int(((Pixel - min) / (max - min)) * 255)
+            histoArray[newPixel] += 1
+
+    plt.bar(pixels, histoArray)
+    img = BytesIO()
+    plt.savefig(img, format='png', dpi=200)
+    img.seek(0)
+    plot_url2 = base64.b64encode(img.getvalue()).decode('utf8')
+
+    return render_template('showImg2.html', plot_url2=plot_url2)
 
 
 def endsin():
-    return 'hello, endsin'
+    image = Image.open('./static/SavedImages/lena_original.bmp')
+
+    width = image.width
+    height = image.height
+    pixels = []
+
+    for x in range(256):
+        pixels.append(x)
+
+    histoArray = np.zeros(256, dtype=int)
+
+    for h in range(0, height):
+        for w in range(0, width):
+            Pixel = image.getpixel((w, h))
+            histoArray[Pixel] += 1
+
+    low = 50
+    high = 190
+    a = high - low
+    newArray = []
+
+    for x in range(256):
+        newArray.append(x)
+
+    for i in range(0, len(histoArray)):
+        if (histoArray[i] < low):
+            newArray[i] = 0
+        elif (histoArray[i] > high):
+            newArray[i] = 255
+        else:
+            newArray[i] = (histoArray[i] - low) / a * 255
+
+    plt.bar(pixels, newArray)
+    img = BytesIO()
+    plt.savefig(img, format='png', dpi=200)
+    img.seek(0)
+    plot_url3 = base64.b64encode(img.getvalue()).decode('utf8')
+
+    return render_template('showImg3.html', plot_url3=plot_url3)
 
 
 if __name__ == "__main__":
