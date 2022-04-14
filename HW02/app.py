@@ -119,7 +119,6 @@ def basic():
     width = image.width
     height = image.height
     pixels = []
-    newArray = []
     min = 255
     max = 0
 
@@ -137,7 +136,6 @@ def basic():
 
     for x in range(256):
         pixels.append(x)
-        newArray.append(x)
 
     histoArray = np.zeros(256, dtype=int)
 
@@ -162,13 +160,11 @@ def endsin():
     width = image.width
     height = image.height
     pixels = []
-    newArray = []
     min = 50
     max = 190
 
     for x in range(256):
         pixels.append(x)
-        newArray.append(x)
 
     histoArray = np.zeros(256, dtype=int)
 
