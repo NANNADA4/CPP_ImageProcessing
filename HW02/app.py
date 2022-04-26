@@ -171,14 +171,12 @@ def endsin():
     for h in range(height):
         for w in range(width):
             Pixel = image.getpixel((w, h))
-
             if (Pixel < min):
                 newPixel = 0
             elif(Pixel >= max):
                 newPixel = 255
             else:
                 newPixel = int(((Pixel - min) / (max - min)) * 255)
-
             histoArray[newPixel] += 1
 
     plt.bar(pixels, histoArray)
