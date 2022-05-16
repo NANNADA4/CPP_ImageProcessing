@@ -32,23 +32,31 @@ body {
     margin: 30px 15% 10px 15%;
 }
 
-.background {
+.background1 {
     margin: 0 auto;
     width: 100px;
     height: 100px;
     border: 15px solid rgb(163, 151, 198);
     border-radius: 50%;
-    z-index: 2;
 }
 
-.row {
-    z-index: 0;
+.background2 {
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    border: 15px solid #ff5555;
+    border-radius: 50%;
 }
 
-.col-sm-6 {
-    z-index: 1;
+.background3 {
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    border: 15px solid #f1fa8c;
+    border-radius: 50%;
 }
 
-.thumbnail {
-    z-index: 3;
+.emoji {
+    font-size: 40px;
+    margin: 5px 0 0 13px;
 }
