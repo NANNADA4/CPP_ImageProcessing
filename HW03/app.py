@@ -37,5 +37,20 @@ def info():
     return render_template('main.html')
 
 
+@app.route('/ex01')
+def ex01():
+    return render_template('ex01.html')
+
+
+@app.route('/ex02')
+def ex02():
+    return render_template('ex02.html')
+
+
+@app.route('/ex03')
+def ex03():
+    return render_template('ex03.html')
+
+
 if __name__ == "__main__":
     app.run(debug=True)

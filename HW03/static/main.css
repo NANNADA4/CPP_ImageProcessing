@@ -7,21 +7,11 @@ body {
 
 .navbar {
     padding: 15px 3% 15px 3%;
-    background-color: #6272a4;
+    /* background-color: black; */
 }
 
-.modal-bodyTitle {
-    font-weight: bold;
-}
-
-.modal-bodyTitle {
-    text-align: center;
-}
-
-.modal-picture {
-    width: 100%;
-    height: 300px;
-    border-radius: 5%;
+.navbar-brand {
+    margin-left: 20px;
 }
 
 .card {
@@ -59,4 +49,30 @@ body {
 .emoji {
     font-size: 40px;
     margin: 5px 0 0 13px;
+}
+
+/* carousel */
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+.bi {
+    vertical-align: -0.125em;
+    fill: currentColor;
+}
+
+.carousel {
+    max-height: 800px;
+    min-width: 100%;
 }
