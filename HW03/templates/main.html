@@ -26,7 +26,6 @@
             <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
                 aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -48,17 +47,6 @@
                         <h1>과제 02번</h1>
                         <p>하단 버튼을 클릭하여 과제02번 사이트로 이동하실 수 있습니다.</p>
                         <p><a class="btn btn-lg btn-primary" href="{{ url_for('ex02')}}">Learn more</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="{{ url_for('static', filename='img/carousel-3.jpg') }}" alt="" class="carousel">
-
-                <div class="container">
-                    <div class="carousel-caption text-end">
-                        <h1>과제 03번</h1>
-                        <p>하단 버튼을 클릭하여 과제03번 사이트로 이동하실 수 있습니다.</p>
-                        <p><a class="btn btn-lg btn-primary" href="{{ url_for('ex03')}}">Learn more</a></p>
                     </div>
                 </div>
             </div>
@@ -85,7 +73,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row justify-content-evenly">
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
                 <div class="background1">
@@ -110,20 +98,6 @@
                     <h3>과제 02</h3>
                     <p>이 곳을 선택하여 과제 번호02로 이동할 수 있습니다. 👇👇👇</p>
                     <p><a href="{{ url_for('ex02')}}" class="btn btn-primary" role="button">이동하기</a> <a href="#"
-                            class="btn btn-default" role="button">소스코드</a></p>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-                <div class="background3">
-                    <p class="emoji"> ✏️</p>
-                </div>
-                <div class="caption">
-                    <hr>
-                    <h3>과제 03</h3>
-                    <p>이 곳을 선택하여 과제 번호03로 이동할 수 있습니다. 👇👇👇</p>
-                    <p><a href="{{ url_for('ex03')}}" class="btn btn-primary" role="button">이동하기</a> <a href="#"
                             class="btn btn-default" role="button">소스코드</a></p>
                 </div>
             </div>
