@@ -6,11 +6,11 @@
     padding: 0px 15% 10px 15%;
 }
 
-/* img {
+.ex-image {
     width: 300px;
     height: 300px;
     object-fit: cover;
-} */
+}
 
 .navbar {
     padding: 15px 3% 15px 3%;
