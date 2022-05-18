@@ -1,0 +1,46 @@
+.row {
+    padding: 30px 15% 10px 15%;
+}
+
+.histogram {
+    padding: 0px 15% 10px 15%;
+}
+
+/* img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+} */
+
+.navbar {
+    padding: 15px 3% 15px 3%;
+    /* background-color: black; */
+}
+
+.navbar-brand {
+    margin-left: 20px;
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+.bi {
+    vertical-align: -0.125em;
+    fill: currentColor;
+}
+
+.carousel {
+    max-height: 800px;
+    min-width: 100%;
+}
