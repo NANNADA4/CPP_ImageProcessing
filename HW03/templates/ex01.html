@@ -61,11 +61,14 @@
         </button>
     </div>
 
+
     <div class="row">
+        <h5>Roberts Edge Detection</h5>
+        <p>결과물 확인을 위해 하단의 버튼을 클릭해주세요.</p>
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-header">
-                    원본 이미지
+                    노이즈 이미지
                 </div>
                 <div class="card-body">
                     <div class="image-container">
@@ -78,7 +81,7 @@
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-header">
-                    수정 이미지
+                    Roberts Edge detection
                 </div>
                 <div class="card-body">
                     <div class="image-container">
@@ -89,6 +92,95 @@
             </div>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-header">
+                    노이즈 이미지
+                </div>
+                <div class="card-body">
+                    <div class="image-container">
+                        <img class="ex-image"
+                            src="{{url_for('static', filename = '/SavedImages/lena_bmp_512x512_new.bmp')}}">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-header">
+                    Sobel Edge detection
+                </div>
+                <div class="card-body">
+                    <div class="image-container">
+                        <img class="ex-image"
+                            src="{{url_for('static', filename = '/SavedImages/lena_bmp_512x512_new.bmp')}}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-header">
+                    노이즈 이미지
+                </div>
+                <div class="card-body">
+                    <div class="image-container">
+                        <img class="ex-image"
+                            src="{{url_for('static', filename = '/SavedImages/lena_bmp_512x512_new.bmp')}}">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-header">
+                    Prewitt Edge detection
+                </div>
+                <div class="card-body">
+                    <div class="image-container">
+                        <img class="ex-image"
+                            src="{{url_for('static', filename = '/SavedImages/lena_bmp_512x512_new.bmp')}}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-header">
+                    노이즈 이미지
+                </div>
+                <div class="card-body">
+                    <div class="image-container">
+                        <img class="ex-image"
+                            src="{{url_for('static', filename = '/SavedImages/lena_bmp_512x512_new.bmp')}}">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-header">
+                    5x5 stochastic gradient
+                </div>
+                <div class="card-body">
+                    <div class="image-container">
+                        <img class="ex-image"
+                            src="{{url_for('static', filename = '/SavedImages/lena_bmp_512x512_new.bmp')}}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
