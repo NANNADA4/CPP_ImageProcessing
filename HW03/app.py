@@ -47,5 +47,18 @@ def ex02():
     return render_template('ex02.html')
 
 
+@app.route('/server', methods=["POST"])
+def server():
+    option = request.form['edge']
+    if(option == 'Roberts'):
+        print("roberts")
+    elif(option == 'Sobel'):
+        return render_template('entry.html')
+    elif(option == 'Prewitt'):
+        print("prewitt")
+    elif(option == 'stochastic'):
+        print("stochastic")
+
+
 if __name__ == "__main__":
     app.run(debug=True)
