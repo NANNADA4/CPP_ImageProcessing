@@ -4,7 +4,7 @@ from functools import update_wrapper, wraps
 from io import BytesIO
 import matplotlib.pyplot as plt
 from PIL import Image
-from flask import Flask, make_response, render_template, request
+from flask import Flask, make_response, render_template, request, flash
 import numpy as np
 import matplotlib
 matplotlib.use('Agg')
@@ -23,6 +23,7 @@ def nocache(view):
 
 
 app = Flask(__name__)
+app.secret_key = "--"
 
 
 @app.route('/')
@@ -50,14 +51,37 @@ def ex02():
 @app.route('/server', methods=["POST"])
 def server():
     option = request.form['edge']
-    if(option == 'Roberts'):
-        print("roberts")
+    if(option == 'Default'):
+        return default()
+    elif(option == 'Roberts'):
+        return roberts()
     elif(option == 'Sobel'):
-        return render_template('entry.html')
+        return sobel()
     elif(option == 'Prewitt'):
-        print("prewitt")
-    elif(option == 'stochastic'):
-        print("stochastic")
+        return prewitt()
+    elif(option == 'Stochastic'):
+        return stochastic()
+
+
+def default():
+    flash("올바른 옵션을 선택해주세요")
+    return render_template('ex01.html')
+
+
+def roberts():
+    return
+
+
+def sobel():
+    return
+
+
+def prewitt():
+    return
+
+
+def stochastic():
+    return
 
 
 if __name__ == "__main__":
