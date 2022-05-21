@@ -20,15 +20,13 @@
 </head>
 
 <body>
-    <div class="container_nav sticky-top">
-        <nav class="navbar navbar-dark bg-primary bg-opacity-50">
-            <a class="navbar-brand" href="{{ url_for('info')}}">
-                <img src="{{ url_for('static', filename='img/logo.png') }}" width="24" height="24"
-                    class="d-inline-block align-text-top">
-                영상처리 과제03
-            </a>
-        </nav>
-    </div>
+    <nav class="navbar sticky-top navbar-dark bg-primary bg-opacity-50">
+        <a class="navbar-brand" href="{{ url_for('index')}}">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" width="24" height="24"
+                class="d-inline-block align-text-top">
+            영상처리 과제03 - 01번
+        </a>
+    </nav>
 
     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
