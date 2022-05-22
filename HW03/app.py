@@ -39,16 +39,19 @@ def info():
 
 
 @app.route('/ex01')
+@nocache
 def ex01():
     return render_template('ex01.html')
 
 
 @app.route('/ex02')
+@nocache
 def ex02():
     return render_template('ex02.html')
 
 
 @app.route('/server', methods=["POST"])
+@nocache
 def server():
     option = request.form['edge']
     if(option == 'Default'):
@@ -69,6 +72,14 @@ def default():
 
 
 def roberts():
+    img = Image.open("./static/SavedImages/lena_bmp_512x512_new.bmp")
+    img = np.array(img)
+
+    roberts_1 = np.array([[1, 0], [0, -1]])
+    roberts_2 = np.array([[0, 1], [-1, 0]])
+
+    img_shape = img.shape
+
     return
 
 
