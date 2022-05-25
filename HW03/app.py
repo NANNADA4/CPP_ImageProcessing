@@ -80,7 +80,7 @@ def roberts():
 
     img_shape = img.shape
 
-    return
+    return 0
 
 
 def sobel():
