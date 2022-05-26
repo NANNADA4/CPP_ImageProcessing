@@ -71,6 +71,10 @@ def default():
     return render_template('ex01.html')
 
 
+def AddGaussian():
+    return
+
+
 def roberts():
     img = Image.open("./static/SavedImages/lena_bmp_512x512_new.bmp")
     img = np.array(img)
