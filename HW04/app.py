@@ -54,11 +54,17 @@ def ex02():
 @app.route('/server', methods=["POST"])
 @nocache
 def server():
-    return open_raw1()
+    if request.form['option'] == 'ex01':
+        return open_raw(ex01)
+    else:
+        return open_raw(ex02)
 
 
-def open_raw1():
-    fid = open("./static/resource/lena_raw_512x512.raw")
+def open_raw(option):
+    if (option == ex01):
+        fid = open("./static/resource/lena_raw_512x512.raw")
+    else:
+        fid = open("./static/resource/BOAT512.raw.raw")
     img = np.fromfile(fid, dtype='uint8', sep='')
     fid.close()
     img = np.reshape(img, [512, 512])
