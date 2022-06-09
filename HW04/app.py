@@ -55,16 +55,29 @@ def ex02():
 @nocache
 def server():
     if request.form['option'] == 'ex01':
-        return open_raw(ex01)
+        return render(ex01)
     else:
-        return open_raw(ex02)
+        return render(ex02)
+
+
+def render(option):
+    raw_show = open_raw(option)
+    dct_show = make_dct(option)
+    if (option == ex01):
+        return render_template('ex01.html', raw_show=raw_show)
+    else:
+        return render_template('ex02.html', raw_show=raw_show)
+
+
+def open_file(option):
+    if (option == ex01):
+        return open("./static/resource/lena_raw_512x512.raw")
+    else:
+        return open("./static/resource/BOAT512.raw")
 
 
 def open_raw(option):
-    if (option == ex01):
-        fid = open("./static/resource/lena_raw_512x512.raw")
-    else:
-        fid = open("./static/resource/BOAT512.raw")
+    fid = open_file(option)
     img = np.fromfile(fid, dtype='uint8', sep='')
     fid.close()
     img = np.reshape(img, [512, 512])
@@ -75,7 +88,11 @@ def open_raw(option):
     img.seek(0)
     raw_show = base64.b64encode(img.getvalue()).decode('utf8')
 
-    return render_template('ex01.html', raw_show=raw_show)
+    return raw_show
+
+
+def make_dct(option):
+    fid = open_file(option)
 
 
 if __name__ == "__main__":

@@ -79,8 +79,7 @@
                 </div>
                 <div class="card-body">
                     <div class="image-container">
-                        <img class="ex-image"
-                            src="{{url_for('static', filename = '/SavedImages/lena_bmp_512x512_new.bmp')}}">
+                        <img class="ex-image" src="data:image/png;base64, {{ raw_show }}" alt="원본이미지 출력">
                     </div>
                 </div>
             </div>
@@ -92,7 +91,7 @@
                 </div>
                 <div class="card-body">
                     <div class="image-container">
-                        <img class="ex-image" src="data:image/png;base64, {{ img_show }}" alt="결과이미지 출력">
+                        <img class="ex-image" src="data:image/png;base64, {{ dct_show }}" alt="결과이미지 출력">
                     </div>
                 </div>
             </div>
