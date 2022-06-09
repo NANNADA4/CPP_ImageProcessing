@@ -5,6 +5,10 @@ body {
     font-family: "Nanum Gothic", sans-serif;
 }
 
+.col-sm-12 {
+    padding-bottom: 15px;
+}
+
 .row {
     padding: 30px 15% 10px 15%;
 }
@@ -53,5 +57,5 @@ body {
 }
 
 #upload-form {
-    margin-bottom: 20px;
+    float: right;
 }

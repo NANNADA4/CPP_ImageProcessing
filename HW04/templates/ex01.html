@@ -109,6 +109,46 @@
 
     수정 끝 -->
 
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body d-inline-block">
+                    다음 버튼을 눌러서 과제 출력물을 확인하실 수 있습니다. 👉👉👉
+                    <form id="upload-form" method="post" action="http://127.0.0.1:5000/server"
+                        enctype="multipart/form-data">
+                        <button type="submit" class="btn btn-primary" formaction="http://127.0.0.1:5000/server"
+                            value="Send" type="submit">출력하기</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-header">
+                    원본 이미지
+                </div>
+                <div class="card-body">
+                    <div class="image-container">
+                        <img class="ex-image"
+                            src="{{url_for('static', filename = '/SavedImages/lena_bmp_512x512_new.bmp')}}">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-header">
+                    DCT
+                </div>
+                <div class="card-body">
+                    <div class="image-container">
+                        <img class="ex-image" src="data:image/png;base64, {{ img_show }}" alt="결과이미지 출력">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer class="footer mt-auto py-3 bg-light">
         <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
             <div class="me-5 d-none d-lg-block">

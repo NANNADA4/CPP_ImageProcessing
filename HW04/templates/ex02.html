@@ -59,23 +59,23 @@
         </button>
     </div>
 
-    <!-- 수정시작
-
     <div class="row">
-        <form id="upload-form" method="post" action="http://127.0.0.1:5000/server" enctype="multipart/form-data">
-            <select name="edge" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                <option value="Default" selected>Edge Detection을 선택해주세요.</option>
-                <option value="Roberts">Roberts Edge Detection</option>
-                <option value="Sobel">Sobel Edge Detection</option>
-                <option value="Prewitt">Prewitt Edge Detection</option>
-                <option value="Stochastic">5x5 stochastic gradient</option>
-            </select>
-            <button type="submit" class="btn btn-primary" value="Send" type="submit">출력하기</button>
-        </form>
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body d-inline-block">
+                    다음 버튼을 눌러서 과제 출력물을 확인하실 수 있습니다. 👉👉👉
+                    <form id="upload-form" method="post" action="http://127.0.0.1:5000/server"
+                        enctype="multipart/form-data">
+                        <button type="submit" class="btn btn-primary" formaction="http://127.0.0.1:5000/server"
+                            value="Send" type="submit">출력하기</button>
+                    </form>
+                </div>
+            </div>
+        </div>
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-header">
-                    노이즈 이미지
+                    원본 이미지
                 </div>
                 <div class="card-body">
                     <div class="image-container">
@@ -88,7 +88,7 @@
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-header">
-                    Edge detection
+                    DCT
                 </div>
                 <div class="card-body">
                     <div class="image-container">
@@ -98,8 +98,6 @@
             </div>
         </div>
     </div>
-
-    수정 끝 -->
 
     <footer class="footer mt-auto py-3 bg-light">
         <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">

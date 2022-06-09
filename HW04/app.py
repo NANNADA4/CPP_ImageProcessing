@@ -51,5 +51,11 @@ def ex02():
     return render_template('ex02.html')
 
 
+@app.route('/server', methods=["POST"])
+@nocache
+def server():
+    return
+
+
 if __name__ == "__main__":
     app.run(debug=True)
