@@ -64,7 +64,7 @@ def open_raw(option):
     if (option == ex01):
         fid = open("./static/resource/lena_raw_512x512.raw")
     else:
-        fid = open("./static/resource/BOAT512.raw.raw")
+        fid = open("./static/resource/BOAT512.raw")
     img = np.fromfile(fid, dtype='uint8', sep='')
     fid.close()
     img = np.reshape(img, [512, 512])
