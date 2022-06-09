@@ -54,7 +54,22 @@ def ex02():
 @app.route('/server', methods=["POST"])
 @nocache
 def server():
-    return
+    return open_raw1()
+
+
+def open_raw1():
+    fid = open("./static/resource/lena_raw_512x512.raw")
+    img = np.fromfile(fid, dtype='uint8', sep='')
+    fid.close()
+    img = np.reshape(img, [512, 512])
+
+    plt.imshow(img, cmap='gray', vmin=0, vmax=255)
+    img = BytesIO()
+    plt.savefig(img, format='png', dpi=300)
+    img.seek(0)
+    raw_show = base64.b64encode(img.getvalue()).decode('utf8')
+
+    return render_template('ex01.html', raw_show=raw_show)
 
 
 if __name__ == "__main__":
