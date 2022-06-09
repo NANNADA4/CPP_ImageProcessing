@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영상처리 과제04</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='entry.css')}}">
+</head>
+
+<body>
+    <div class="crossfade">
+        <figure></figure>
+        <figure></figure>
+        <figure></figure>
+        <figure></figure>
+        <figure></figure>
+    </div>
+    <div class="card">
+        <div class="EntryImage">
+            <div class="circle"></div>
+            <img class="main-image" src="{{ url_for('static', filename='img/MyLogo.png') }}" alt="EntryImage">
+        </div>
+        <div class="info">
+            <h1 class="title">영상처리 과제04</h1>
+            <h3 class="subtitle">메인 페이지로 이동</h3>
+            <div class="LinkTo">
+                <button class="btn" onClick="location.href='main'" onmouseover="ClickTitle('Go Go Go');"
+                    onmouseout="ClickTitle('메인 페이지로 이동');">Go To Main
+                    Page</button>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='entry.js')}}"></script>
+</body>
+
+</html>
