@@ -1,5 +1,4 @@
 import base64
-from cmath import sqrt
 from datetime import datetime
 from functools import update_wrapper, wraps
 from io import BytesIO
@@ -54,23 +53,20 @@ def ex02():
 @app.route('/server', methods=["POST"])
 @nocache
 def server():
-    if request.form['option'] == 'ex01':
-        return render(ex01)
-    else:
-        return render(ex02)
+    return render(request.form['option'])
 
 
 def render(option):
     raw_show = open_raw(option)
     dct_show = make_dct(option)
-    if (option == ex01):
-        return render_template('ex01.html', raw_show=raw_show)
+    if (option == 'ex01'):
+        return render_template('ex01.html', raw_show=raw_show, dct_show=dct_show)
     else:
-        return render_template('ex02.html', raw_show=raw_show)
+        return render_template('ex02.html', raw_show=raw_show, dct_show=dct_show)
 
 
 def open_file(option):
-    if (option == ex01):
+    if (option == 'ex01'):
         return open("./static/resource/lena_raw_512x512.raw")
     else:
         return open("./static/resource/BOAT512.raw")
@@ -93,6 +89,13 @@ def open_raw(option):
 
 def make_dct(option):
     fid = open_file(option)
+
+    # B_size = 8
+
+    # for i in range(0, 40):
+    #     zz = math.pi * float(i+1) / 64.0
+    #     c[i] = math.cos(zz)
+    #     s[i] = math.sin(zz)
 
 
 if __name__ == "__main__":
